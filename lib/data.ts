@@ -26,6 +26,76 @@ export interface TechCategory {
   items: string[];
 }
 
+export interface Article {
+  title: string;
+  description: string;
+  publication: string;
+  date: string;
+  url?: string;
+  slug: string;
+  tags: string[];
+  status: "published" | "draft";
+  readingTime?: string;
+}
+
+export const articles: Article[] = [
+  {
+    title: "50% Latency in 30 Days: What Hash Maps and Priority Queues Did to Our Video Pipeline",
+    description:
+      "A deep-dive into how we reduced production video processing latency from 800ms to 400ms without touching the core algorithm. The fix wasn't clever — it was obvious in hindsight. Most performance wins are.",
+    publication: "Personal",
+    date: "Feb 2025",
+    slug: "latency-hash-maps",
+    tags: ["Python", "asyncio", "Performance", "Data Structures"],
+    status: "published",
+    readingTime: "12 min read",
+  },
+  {
+    title: "I Built a Bayesian Email Classifier Without a Single ML Library",
+    description:
+      "ScrollOS classifies 1,000+ newsletters per user at 90% accuracy using n-gram frequency tables and Bayes' theorem — implemented from scratch in ~200 lines of TypeScript. Here's exactly how it works.",
+    publication: "Personal",
+    date: "Jan 2025",
+    slug: "bayesian-email-classifier",
+    tags: ["TypeScript", "Bayesian", "NLP", "SaaS"],
+    status: "published",
+    readingTime: "14 min read",
+  },
+  {
+    title: "Kubernetes Resource Requests vs Limits: The Setting Nobody Explains Correctly",
+    description:
+      "After tuning CPU/memory for real-time frame processing at 60fps, I have strong opinions on requests vs limits. The docs tell you what they do — they don't tell you what happens when you get it wrong at 3am.",
+    publication: "Personal",
+    date: "Dec 2024",
+    slug: "kubernetes-requests-limits",
+    tags: ["Kubernetes", "DevOps", "Performance", "Infrastructure"],
+    status: "published",
+    readingTime: "11 min read",
+  },
+  {
+    title: "GPT-4 Fallback Chains: Keeping Your AI Feature Alive When the Provider Isn't",
+    description:
+      "TalentSync uses a GPT-4 → GPT-4o-mini fallback with Zod-validated structured outputs. The pattern is simple but the failure modes aren't. A practical guide to LLM reliability in production.",
+    publication: "Personal",
+    date: "Nov 2024",
+    slug: "gpt4-fallback-chains",
+    tags: ["LLMs", "TypeScript", "Zod", "OpenAI"],
+    status: "published",
+    readingTime: "10 min read",
+  },
+  {
+    title: "Redis Pub/Sub vs WebSockets: What I Learned Building Real-Time SaaS",
+    description:
+      "ScrollOS uses both — and they solve different problems. After shipping 40% throughput improvements by combining them with batched writes, here's the mental model I use to decide which tool to reach for.",
+    publication: "Personal",
+    date: "Oct 2024",
+    slug: "redis-pubsub-websockets",
+    tags: ["Redis", "WebSockets", "Node.js", "Architecture"],
+    status: "published",
+    readingTime: "13 min read",
+  },
+];
+
 export const experience: ExperienceEntry[] = [
   {
     role: "Platform Engineer",
